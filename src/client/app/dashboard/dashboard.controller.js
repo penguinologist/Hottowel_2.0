@@ -5,9 +5,9 @@
         .module('app.dashboard')
         .controller('DashboardController', DashboardController);
 
-    DashboardController.$inject = ['$q', 'dataservice', 'logger'];
+    DashboardController.$inject = ['$q', 'dataservice', 'logger','$rootScope'];
     /* @ngInject */
-    function DashboardController($q, dataservice, logger) {
+    function DashboardController($q, dataservice, logger,$rootScope) {
         var vm = this;
         vm.news = {
             title: 'helloWorld',
@@ -17,6 +17,7 @@
         vm.people = [];
         vm.title = 'Dashboard';
 
+        $rootScope.title="Dashboard";
         activate();
 
         function activate() {
