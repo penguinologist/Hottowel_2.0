@@ -2,7 +2,7 @@
 
 
 
-**This is a fork from John_Papa's Hottowel, but without the awkward router-helper. Currently it does not support the sidebar**
+**This is a fork from John_Papa's Hottowel, but without the awkward router-helper. Currently it does not support the sidebar.**
 
 
 #**Generated from HotTowel Angular**
