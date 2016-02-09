@@ -26,7 +26,7 @@
     ```
 
     >Refer to these [instructions on how to not require sudo](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)
-
+    >Currently (2/9/2016), NPM is forcing the install of fsevents and sometimes it complains over operating system requirements. Check out this article for a solution: https://github.com/npm/npm/issues/2679#issuecomment-150084700
 ## Running HotTowel
 
 ### Linting
@@ -108,8 +108,8 @@ The `blocks.exception` module handles exceptions across the Angular app.
 
 It depends on the `blocks.logger` module, because the implementation logs the exceptions.
 
-##### blocks.router Module
-The `blocks.router` module contains a routing helper module that assists in adding routes to the $routeProvider.
+##### What happened to the blocks.router Module
+I got rid of it.
 
 ## Gulp Tasks
 
