@@ -1,6 +1,11 @@
 # helloWorld
 
-**Generated from HotTowel Angular**
+
+
+**This is a fork from John_Papa's Hottowel, but without the awkward router-helper. Currently it does not support the sidebar**
+
+
+#**Generated from HotTowel Angular**
 
 >*Opinionated Angular style guide for teams by [@john_papa](//twitter.com/john_papa)*
 
