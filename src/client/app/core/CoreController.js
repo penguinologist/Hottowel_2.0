@@ -8,20 +8,15 @@
         .module('app.core')
         .controller('CoreController', CoreController);
 
-    CoreController.$inject = ['$q', 'dataservice', 'logger'];
+    /**
+     * We inject parameters into the CoreController to force an instance of it.
+     * @type {string[]}
+     */
+    CoreController.$inject = [];
     /* @ngInject */
-    function CoreController($q, dataservice, logger) {
-        var vm = this;
-        //vm.news = {
-        //    title: 'helloWorld',
-        //    description: 'Hot Towel Angular is a SPA template for Angular developers.'
-        //};
-        //vm.messageCount = 0;
-        //vm.people = [];
-        //vm.title = 'Dashboard';
+    function CoreController() {
 
-
-
-
+        //This would be the location where more functionality of
+        // the CoreController can be created.
     }
 })();

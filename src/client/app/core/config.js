@@ -1,6 +1,11 @@
 (function () {
     'use strict';
 
+    /**
+     * This module is the "core" of the page, however realistically it's but
+     * the backbone. It configures the handling of errors and logging thereof.
+     */
+
     var core = angular.module('app.core');
 
     core.config(toastrConfig);
@@ -19,8 +24,8 @@
 
     core.value('config', config);
 
-    core.config(configure);
 
+    core.config(configure);
     //TODO
     configure.$inject = ['$logProvider','exceptionHandlerProvider'];
     /* @ngInject */
@@ -29,7 +34,6 @@
             $logProvider.debugEnabled(true);
         }
         exceptionHandlerProvider.configure(config.appErrorPrefix);
-        //routerHelperProvider.configure({docTitle: config.appTitle + ': '});
 
     }
 

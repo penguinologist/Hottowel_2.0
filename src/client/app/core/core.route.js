@@ -1,57 +1,21 @@
-
-/*
- function handleRoutingErrors() {
- // Route cancellation:
- // On routing error, go to the dashboard.
- // Provide an exit clause if it tries to do it twice.
- $rootScope.$on('$stateChangeError',
- function(event, toState, toParams, fromState, fromParams, error) {
- if (handlingStateChangeError) {
- return;
- }
- stateCounts.errors++;
- handlingStateChangeError = true;
- var destination = (toState &&
- (toState.title || toState.name || toState.loadedTemplateUrl)) ||
- 'unknown target';
- var msg = 'Error routing to ' + destination + '. ' +
- (error.data || '') + '. <br/>' + (error.statusText || '') +
- ': ' + (error.status || '');
- logger.warning(msg, [toState]);
- $location.path('/');
- }
- );
- }
-
- function init() {
- handleRoutingErrors();
- updateDocTitle();
- }
-
- function getStates() { return $state.get(); }
-
- function updateDocTitle() {
- $rootScope.$on('$stateChangeSuccess',
- function(event, toState, toParams, fromState, fromParams) {
- stateCounts.changes++;
- handlingStateChangeError = false;
- var title = config.docTitle + ' ' + (toState.title || '');
- $rootScope.title = title; // data bind to <title>
- }
- );
- }
-
- */
 (function() {
     'use strict';
 
+    /**
+     * This is the simpler and more logical approach that John_papa overwrote.
+     * Essentially you're able to list as many states as you want, but instead
+     * of having them in array-format to iterate through them as such, you can call
+     * upon them by name or, if you wanted to, you could still get all of them in
+     * an array-format by calling upon $state.get(), which will return all the states
+     * in an array. Having multiple states in this format is a cleaner
+     * approach, however it doesn't allow for much reusable code (aside from copy-paste)
+     */
     angular
         .module('app.core')
         .config(function ($stateProvider) {
             $stateProvider
                 .state('404', {
                     url: '/404',
-
                     views: {
                         "main": {
                             controller: 'CoreController',
@@ -63,58 +27,7 @@
                         pageTitle: '404'
                     }
                 })
-                /*
-                 state: '404',
-                 config: {
-                 url: '/404',
-                 templateUrl: 'app/core/404.html',
-                 title: '404'
-                 }
-                 */
         });
 })();
 
 
-
-
-
-    /*
-
-    angular
-        .module('app.core')
-        .run(appRun);
-
-    //* @ngInject *
-    function appRun(routerHelper) {
-        var otherwise = '/404';
-
-        //TODO
-        routerHelper.configureStates(getStates(), otherwise);
-
-        /*states.forEach(function(state) {
-            state.config.resolve =
-                angular.extend(state.config.resolve || {}, config.resolveAlways);
-            $stateProvider.state(state.state, state.config);
-        });
-        if (otherwisePath && !hasOtherwise) {
-            hasOtherwise = true;
-            $urlRouterProvider.otherwise(otherwisePath);
-        }*
-
-    }
-
-    function getStates() {
-        return [
-            {
-                state: '404',
-                config: {
-                    url: '/404',
-                    templateUrl: 'app/core/404.html',
-                    title: '404'
-                }
-            }
-        ];
-    }
-})();
-
-*/
