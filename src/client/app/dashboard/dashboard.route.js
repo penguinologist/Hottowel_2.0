@@ -22,7 +22,7 @@
                         name: 'dashboard',
                         content: '<i class="fa fa-dashboard"></i> Dashboard'
                     }
-                })
+                });
 
         });
 })();

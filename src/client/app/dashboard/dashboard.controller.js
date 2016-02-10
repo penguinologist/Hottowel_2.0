@@ -6,7 +6,8 @@
         .controller('DashboardController', DashboardController);
 
     /**
-     * In order to call on the constructor, variables are injected to force the call upon the function DashboardController.
+     * In order to call on the constructor, variables are injected to
+     * force the call upon the function DashboardController.
      * @type {string[]}
      */
     DashboardController.$inject = ['$q', 'dataservice', 'logger','$rootScope'];
@@ -21,7 +22,7 @@
         vm.people = [];
         vm.title = 'Dashboard';
 
-        $rootScope.title="Dashboard";
+        $rootScope.title = 'Dashboard';
         activate();
 
         /**

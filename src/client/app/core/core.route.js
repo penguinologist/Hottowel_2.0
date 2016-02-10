@@ -17,7 +17,7 @@
                 .state('404', {
                     url: '/404',
                     views: {
-                        "main": {
+                        'main': {
                             controller: 'CoreController',
                             templateUrl: 'app/core/404.html',
                             controllerAs: 'vm'
@@ -26,8 +26,6 @@
                     data: {
                         pageTitle: '404'
                     }
-                })
+                });
         });
 })();
-
-

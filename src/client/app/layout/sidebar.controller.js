@@ -9,9 +9,6 @@
     /* @ngInject */
     function SidebarController($state,$rootScope,logger) {
         var vm = this;
-
-
-
         var states = $state.get();
         vm.isCurrent = isCurrent;
         logger.success(states.length,null);
@@ -22,7 +19,7 @@
             vm.navRoutes = states;
             //TODO what are these routes and how do I call them?!
 
-            $rootScope.title=  states[0].data||'undefined';
+            $rootScope.title =  states[0].data || 'undefined';
         }
 
         function isCurrent(route) {
@@ -31,10 +28,5 @@
             }
             var menuName = route.title;
             return $state.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
-        }
-    }
+        }}
 })();
-
-
-
-

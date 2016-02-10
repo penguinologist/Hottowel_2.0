@@ -23,8 +23,6 @@
     };
 
     core.value('config', config);
-
-
     core.config(configure);
     //TODO
     configure.$inject = ['$logProvider','exceptionHandlerProvider'];
@@ -34,7 +32,5 @@
             $logProvider.debugEnabled(true);
         }
         exceptionHandlerProvider.configure(config.appErrorPrefix);
-
     }
-
 })();
